@@ -1,7 +1,7 @@
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references my connection to the DB.
-var sequelize = require("../config/connection.js");
-
+// var Sequelize = require("sequelize");
+// // sequelize (lowercase) references my connection to the DB.
+// var sequelize = require("../config/connection.js");
+module.exports = function (sequelize, Sequelize) {
 var Users = sequelize.define("user", {
   id: {
     autoIncrement: true,
@@ -26,7 +26,9 @@ var Users = sequelize.define("user", {
       type: Sequelize.DATE
   }
 });
+return Users
 
-Users.sync();
+}
 
-module.export = Users;
+
+
