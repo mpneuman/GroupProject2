@@ -24,6 +24,6 @@ var Expenditures = sequelize.define("expenditure", {
   }
 });
 
-Users.sync();
+Expenditures.sync();
 
-module.export = Users;
+module.export = Expenditures;
