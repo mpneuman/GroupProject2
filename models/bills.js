@@ -10,17 +10,17 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.STRING,
         notEmpty: true
       },
-      amount_due: {
+      amountDue: {
         type: Sequelize.FLOAT,
         acceptNull: false
       },
       category: {
         type: Sequelize.STRING
       },
-      date_due: {
+      dateDue: {
         type: Sequelize.DATE
       },
-      website_access: {
+      websiteAccess: {
           type: Sequelize.STRING
       },
       notes: {
