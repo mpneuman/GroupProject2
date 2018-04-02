@@ -20,7 +20,7 @@ var Users = sequelize.define("user", {
     type: Sequelize.STRING
   },
   password: {
-    type: Sequelize.INTEGER
+    type: Sequelize.STRING
   },
   lastLogin: {
       type: Sequelize.DATE
