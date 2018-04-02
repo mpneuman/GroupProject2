@@ -15,24 +15,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //for passport
-app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); //session secret
-app.use(passport.initialize());
-app.use(passport.session()); //persistent login sessions
+// app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); //session secret
+// app.use(passport.initialize());
+// app.use(passport.session()); //persistent login sessions
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
+// var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 //models
 var models = require('./models');
 
 //routes
-var authRoute = require('./routes/auth.js')(app, passport);
+// var authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+// require('./config/passport/passport.js')(passport, models.user);
 
 //sync database
 models.sequelize.sync().then(function () {
@@ -40,6 +40,7 @@ models.sequelize.sync().then(function () {
 }).catch(function (err) {
     console.log("something went wrong");
 })
+
 
 // checks for errors
 app.listen(PORT, function (err) {
