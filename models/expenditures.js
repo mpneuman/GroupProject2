@@ -11,7 +11,7 @@ module.exports = function (sequelize, Sequelize) {
         notEmpty: true
       },
       amount_paid: {
-        type: Sequelize.FLOAT,
+        type: Sequelize.DECIMAL(10,2),
         acceptNull: false
       },
       category: {
