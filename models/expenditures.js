@@ -19,9 +19,6 @@ module.exports = function (sequelize, Sequelize) {
       },
       notes: {
         type: Sequelize.STRING
-      },
-      lastLogin: {
-          type: Sequelize.DATE
       }
     });
     return Expenditures
