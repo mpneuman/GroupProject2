@@ -1,1 +1,106 @@
-<p>Hello {{dataValues.firstname}} {{dataValues.lastname}}</p>
+<div id="mainSection">
+    <header>
+        <h1>Hello {{dataValues.firstname}} {{dataValues.lastname}}!
+            <br> Welcolme to Billify</h1>
+    </header>
+    <section id="lists">
+        <div id="bills">
+            <h3>Here is a list of your bills</h3>
+            <div id="billList">
+                <div id="dynamicBills">
+                    {{!-- dynamic bills --}}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="exps">
+            <h3>Here is a list of your expenditures</h3>
+            <div id="expsList">
+                <div id="dynamicExps">
+                    {{!-- dynamic exps --}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="addSection">
+        <div id="addBill">
+            <span>Add a new bill</span>
+            <form id="newBill" name="newBill" method="post" action="/newBill">
+                <label for="payee">New Bill Name</label>
+                <br>
+                <input class="text" name="payee" type="text" />
+                <br>
+                <label for="amountDue">New Bill Amount</label>
+                <br>
+                <input class="text" name="amountDue" type="text" />
+                <br>
+                <label for="category">New Bill Category</label>
+                <br>
+                <input class="text" name="category" type="text" /> {{!-- will change ^ to dropdown box --}}
+                <br>
+                <label for="dateDue">New Bill Due Date</label>
+                {{!-- Will try to add calander --}}
+                <br>
+                <input class="text" name="dateDue" type="text" />
+                <br>
+                <label for="websiteAccess">New Bill Website</label>
+                <br>
+                <input class="text" name="websiteAccess" type="text" />
+                <br>
+                <label for="notes">New Bill Notes</label>
+                <br>
+                <input class="text" name="notes" type="text" />
+                <br>
+                <input class="btn" type="submit" value="Add a Bill" />
+            </form>
+        </div>
+        <br>
+        <div id="addExps">
+            <span>Add a Purchase</span>
+            <br>
+            <form id="newExp" name="newExp" method="post" action="/newExp">
+                <label for="payee">New Purchase</label>
+                <br>
+                <input class="text" name="payee" type="text" />
+                <br>
+                <label for="amount_paid">Amount Paid</label>
+                <br>
+                <input class="text" name="amount_paid" type="text" />
+                <br>
+                <label for="category">Category</label>
+                <br>
+                <input class="text" name="category" type="text" />
+                {{!-- will make drop down --}}
+                <br>
+                <label for="notes">Notes</label>
+                <br>
+                <input class="text" name="notes" type="text" />
+                <br>
+
+                <input class="btn" type="submit" value="Add a Bill" />
+            </form>
+        </div>
+    </section>
+    <section id="graphs">
+        <div id="billsGraph">
+            <span>
+                <h4>What your bills look like</h4>
+            </span>
+            {{!-- bill graph will go here --}}
+        </div>
+        <div id="expsGraph">
+            <span>
+                <h4>What your expenses look like</h4>
+            </span>
+            {{!-- exps graph will go here --}}
+        </div>
+        <div id="totalGraph">
+            <span>
+                <h4>What your total spendings look like</h4>
+            </span>
+            {{!-- totals will go here --}}
+        </div>
+    </section>
+</div>
+<div id="logout"><a href='/logout'><button>Log Out</button></a></div>
