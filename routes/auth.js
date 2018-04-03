@@ -14,7 +14,9 @@ module.exports = function (app, passport) {
         successRedirect: '/index',
         failureRedirect: '/signin'
     }
-))
+));
+
+    app.get('/logout', authController.logout);
 
     function isLoggedIn(req, res, next) {
  
