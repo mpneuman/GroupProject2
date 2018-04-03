@@ -21,6 +21,10 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.STRING
       }
     });
-    return Expenditures
+
+    Expenditures.associate = function(models) {
+        Expenditures.belongsTo(models.Users);
+        };
+    return Expenditures;
     
-    }
+    };
