@@ -6,6 +6,9 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
+var force = (process.argv[2] || "false") == "true";
+
+
 
 //ports
 var PORT = process.env.port || 5000;
@@ -35,7 +38,7 @@ var authRoute = require('./routes/auth.js')(app, passport);
 require('./config/passport/passport.js')(passport, models.user);
 
 //sync database
-models.sequelize.sync().then(function () {
+models.sequelize.sync({force: force}).then(function () {
     console.log('db looks fine');
 }).catch(function (err) {
     console.log("something went wrong");
