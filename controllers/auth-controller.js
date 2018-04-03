@@ -2,7 +2,15 @@ var db = require('../models');
 var exports = module.exports = {};
 
 exports.index = function (req, res) {
-    res.render('index');
+    db.user.findOne({
+        where: {
+            id: req.user.id
+        }
+    }).then(function (result) {
+        
+        res.render('index', result);
+    })
+
 }
 
 exports.signup = function (req, res) {

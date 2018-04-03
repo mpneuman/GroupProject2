@@ -6,7 +6,12 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
-var force = (process.argv[2] || "false") == "true";
+// var force = (process.argv[2] || "false") == "true";
+var program = require('commander');
+
+program
+    .option('-f, --force', 'Force Initialization of Schema')
+    .parse(process.argv);
 
 
 
@@ -38,7 +43,7 @@ var authRoute = require('./routes/auth.js')(app, passport);
 require('./config/passport/passport.js')(passport, models.user);
 
 //sync database
-models.sequelize.sync({force: force}).then(function () {
+models.sequelize.sync({ force: program.force }).then(function () {
     console.log('db looks fine');
 }).catch(function (err) {
     console.log("something went wrong");
