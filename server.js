@@ -41,6 +41,7 @@ models.sequelize.sync().then(function () {
     console.log("something went wrong");
 })
 
+
 // checks for errors
 app.listen(PORT, function (err) {
     if (!err)

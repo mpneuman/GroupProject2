@@ -22,9 +22,9 @@ module.exports = function (sequelize, Sequelize) {
       }
     });
 
-    Expenditures.associate = function(models) {
-        Expenditures.belongsTo(models.Users);
-        };
+    // Expenditures.associate = function(models) {
+    //     Expenditures.belongsTo(models.Users);
+    //     };
     return Expenditures;
     
     };

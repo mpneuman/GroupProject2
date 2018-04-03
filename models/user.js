@@ -1,34 +1,32 @@
-// var Sequelize = require("sequelize");
-// // sequelize (lowercase) references my connection to the DB.
-// var sequelize = require("../config/connection.js");
 module.exports = function (sequelize, Sequelize) {
-var Users = sequelize.define("user", {
-  id: {
-    autoIncrement: true,
-    primaryKey: true,
-    type: Sequelize.INTEGER
-  },
+  var Users = sequelize.define('user', {
+      id: {
+          autoIncrement: true,
+          primaryKey: true,
+          type: Sequelize.INTEGER
+      },
+      firstname: {
+          type: Sequelize.STRING,
+          notEmpty: true
+      },
+      lastname: {
+          type: Sequelize.STRING,
+          notEmpty: true
+      },
+      username: {
+          type: Sequelize.TEXT
+      },
+      email: {
+          type: Sequelize.STRING,
+          validate: {
+              isEmail: true
+          }
+      },
+      password: {
+          type: Sequelize.STRING,
+          allowNull: false
+      }
 
-  first_name: {
-    type: Sequelize.STRING,
-    notEmpty: true
-  },
-  last_name: {
-    type: Sequelize.STRING
-  },
-  email: {
-    type: Sequelize.STRING
-  },
-  password: {
-    type: Sequelize.STRING
-  },
-  lastLogin: {
-      type: Sequelize.DATE
-  }
-});
-return Users
-
+  });
+  return Users;
 }
-
-
-
