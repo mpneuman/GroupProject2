@@ -1,7 +1,9 @@
 var authController = require('../controllers/auth-controller.js');
 
 module.exports = function (app, passport) {
+
     app.get('/index', isLoggedIn, authController.index);
+    
     app.get('/signup', authController.signup);
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/index',
