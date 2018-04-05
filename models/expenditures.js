@@ -1,5 +1,5 @@
 module.exports = function (sequelize, Sequelize) {
-    var Expenditures = sequelize.define("expenditure", {
+    var Expenditures = sequelize.define("Expenditures", {
       id: {
         autoIncrement: true,
         primaryKey: true,
@@ -22,9 +22,15 @@ module.exports = function (sequelize, Sequelize) {
       }
     });
 
-    // Expenditures.associate = function(models) {
-    //     Expenditures.belongsTo(models.Users);
-    //     };
+    Expenditures.associate = function (models) {
+      // We're saying that a Post should belong to an Author
+      // A Post can't be created without an Author due to the foreign key constraint
+      Expenditures.belongsTo(models.Users, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
     return Expenditures;
     
     };
