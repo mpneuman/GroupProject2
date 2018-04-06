@@ -1,10 +1,12 @@
 module.exports = function (sequelize, Sequelize) {
     var Users = sequelize.define('Users', {
 
-        id: {
-            type: Sequelize.UUID,
-            primaryKey: true
-        },
+        // id: {
+        //     type: Sequelize.UUID,
+        //     autoIncrement: true,
+        //     primaryKey: true
+            
+        // },
         firstname: {
             type: Sequelize.STRING,
             notEmpty: true

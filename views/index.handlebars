@@ -52,6 +52,7 @@
                 <br>
                 <input class="text" name="notes" type="text" />
                 <br>
+                <input type='hidden' value={{{dataValues.id}}} name ="UserId" />
                 <input class="btn" type="submit" value="Add a Bill" />
             </form>
         </div>
@@ -70,8 +71,7 @@
                 <br>
                 <label for="category">Category</label>
                 <br>
-                <input class="text" name="category" type="text" />
-                {{!-- will make drop down --}}
+                <input class="text" name="category" type="text" /> {{!-- will make drop down --}}
                 <br>
                 <label for="notes">Notes</label>
                 <br>
@@ -103,4 +103,8 @@
         </div>
     </section>
 </div>
-<div id="logout"><a href='/logout'><button>Log Out</button></a></div>
+<div id="logout">
+    <a href='/logout'>
+        <button>Log Out</button>
+    </a>
+</div>
