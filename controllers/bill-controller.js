@@ -30,7 +30,7 @@ exports.getBills = function (req, res) {
 exports.burnBills = function (req, res) {
     db.Bills.destroy({
         where: {
-            UsereId: req.user.id
+            id: req.body.id
         }
     }).then(function (result) {
         console.log(result);
@@ -42,7 +42,7 @@ exports.updateBills = function (req, res) {
         req.body,
         {
             where: {
-                UserId: req.user.id
+                id: req.body.id
             }
         }).then(function (results) {
             console.log(results);
