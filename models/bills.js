@@ -14,7 +14,7 @@ module.exports = function (sequelize, Sequelize) {
       type: Sequelize.STRING
     },
     dateDue: {
-      type: Sequelize.DATE
+      type: Sequelize.STRING
     },
     websiteAccess: {
       type: Sequelize.STRING

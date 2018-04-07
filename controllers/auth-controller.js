@@ -27,19 +27,17 @@ exports.logout = function (req, res) {
     });
 }
 
-exports.newBill = function (req, res) {
-    db.Bills.create({
-        payee: req.body.payee,
-        amountDue: req.body.amountDue,
-        category: req.body.category,
-        dueDate: req.body.dueDate,
-        websiteAccess: req.body.websiteAccess,
-        notes: req.body.notes,
-        UserId: req.body.UserId
+// exports.newBill = function (req, res) {
+//     db.Bills.create({
+//         payee: req.body.payee,
+//         amountDue: req.body.amountDue,
+//         category: req.body.category,
+//         dueDate: req.body.dueDate,
+//         websiteAccess: req.body.websiteAccess,
+//         notes: req.body.notes,
+//         UserId: req.body.UserId
 
-    }).then(function (result) {
-        res.redirect('/index');
-    })
-
-    // res.render('index');
-}
+//     }).then(function (result) {
+//         res.redirect('/index');
+//     })
+// }
