@@ -1,7 +1,5 @@
 var db = require('../models');
 var exports = module.exports = {};
-// var user = db.Users.user.id;
-// console.log(UserId)
 exports.newBill = function (req, res) {
     db.Bills.create({
         payee: req.body.payee,

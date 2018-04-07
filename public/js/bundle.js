@@ -5242,7 +5242,20 @@
         require('moment-recur');
 
         getBills();
+        $(document).on("click", "button.changeAmt", update);
+        function update(){
+            var currentBill = $(this)
+            .parent()
+            $(currentBill).text("waiting on route");
 
+        }
+
+
+   
+
+
+
+        
 
         function getBills() {
             $.get('/getBills', getBillList);
@@ -5250,20 +5263,22 @@
 
         function getBillList(data) {
 
+
             var today = new Date();
             var dd = today.getDate();
-            var mm = today.getMonth()+1; //January is 0!
+            var mm = today.getMonth() + 1; //January is 0!
             var yyyy = today.getFullYear();
-            
-            if(dd<10) {
-                dd = '0'+dd
-            } 
-            
-            if(mm<10) {
-                mm = '0'+mm
-            } 
-            
+
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
             today = mm + '/' + dd + '/' + yyyy;
+
 
 
 
@@ -5288,8 +5303,8 @@
                 recurrence = moment(thisMonthBill).recur().every(1).months();//set the recur to every one month
                 nextDates = recurrence.next(1, "L")// show next recur
                 var whenDue;
-                console.log("This"+moment(thisMonthBill));
-                console.log("today"+moment(today));
+                console.log("This" + moment(thisMonthBill));
+                console.log("today" + moment(today));
                 // console.log("math"+thisMonthBill-today)
                 if (moment(thisMonthBill).diff(moment(today), 'days') < 0) {//if one is not negative store in variable
                     whenDue = moment(nextDates[i]).diff(today, 'days');//show how many days till
@@ -5303,17 +5318,29 @@
                     // whenDue++;
 
                 }
+
+
+
                 $('#dynamicBills').append(
                     `<div class ="bills" data-id=${data[i].id}>
             <p class='billName'>Bill Name: ${data[i].payee} </p>
-            <p class='billAmount'>Amount Due: ${data[i].amountDue}</p>
-            <p class='billDate'> Days till due: ${whenDue}</p>        
+            <p class='billAmount' id='amount'>Amount Due: ${data[i].amountDue}</p>
+             
+            <p class='billDate'> Days till due: ${whenDue}</p> 
+            <p class='billWebsite'> Website for Bill: ${data[i].websiteAccess}</p>
+            <p class='billNotes'> Notes for Bill: ${data[i].notes}</p>      
             
             
             </br>
             </div>
     `);
+
             }
+            var updateButton = $("<button>");
+            updateButton.text("Update Bills");
+            updateButton.addClass('changeAmt')
+            $(".billAmount").append(updateButton);
+
         }
     }, { "moment": 2, "moment-recur": 1 }]
 }, {}, [3]);
