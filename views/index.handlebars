@@ -83,7 +83,7 @@
         </div>
         <br>
         <div id="addExps">
-            <span>Add a Purchase</span>
+            <h3>Add a Purchase</h3>
             <br>
             <form id="newExp" name="newExp" method="post" action="/newExp">
                 <label for="payee">New Purchase</label>
@@ -102,8 +102,8 @@
                 <br>
                 <input class="text" name="notes" type="text" />
                 <br>
-
-                <input class="btn" type="submit" value="Add a Bill" />
+ <input type='hidden' value={{{dataValues.id}}} name="UserId" />
+                <input class="btn" type="submit" value="585" />
             </form>
         </div>
     </section>

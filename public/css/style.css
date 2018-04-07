@@ -77,5 +77,54 @@ h1{
     color: #000;
  }
 
+ #addBill {
+    border: none;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    padding: 5%;
+    border-top: 3px solid black;
 
+}
+#addBill h3 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: black;
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
 
+#addBill input[type=text] {
+    background-color: #3CBC8D;
+    color: white;
+}
+
+#addExps {
+    border: none;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    padding: 5%;
+    border-top: 3px solid black;
+}
+
+#addExps h3 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: black;
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#addExps input[type=text] {
+    background-color: #3CBC8D;
+    color: white;
+}
+#billsGraph{
+    color: white;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+}
