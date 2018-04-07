@@ -30,7 +30,7 @@ exports.getBills = function (req, res) {
 exports.burnBills = function (req, res) {
     db.Bills.destroy({
         where: {
-            id: req.params.id
+            UsereId: req.user.id
         }
     }).then(function (result) {
         console.log(result);
@@ -39,10 +39,10 @@ exports.burnBills = function (req, res) {
 }
 exports.updateBills = function (req, res) {
     db.Bills.update(
-        req.user,
+        req.body,
         {
             where: {
-                id: req.user.id
+                UserId: req.user.id
             }
         }).then(function (results) {
             console.log(results);
