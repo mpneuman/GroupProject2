@@ -9,6 +9,8 @@ var exphbs = require('express-handlebars');
 // var force = (process.argv[2] || "false") == "true";
 var program = require('commander');
 
+app.use(express.static('./public'));
+
 program
     .option('-f, --force', 'Force Initialization of Schema')
     .parse(process.argv);
@@ -22,10 +24,13 @@ var PORT = process.env.port || 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+
 //for passport
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); //session secret
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions
+
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -38,9 +43,9 @@ var models = require('./models');
 
 //routes
 var authRoute = require('./routes/auth.js')(app, passport);
-
+var billRoute = require('./routes/bill-routes.js')(app, passport);
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+require('./config/passport/passport.js')(passport, models.Users);
 
 //sync database
 models.sequelize.sync({ force: program.force }).then(function () {
