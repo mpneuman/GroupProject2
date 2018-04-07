@@ -6,7 +6,8 @@ module.exports = function (app, passport) {
     app.get('/signup', authController.signup);
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/index',
-        failureRedirect: '/signup'
+        failureRedirect: '/signup',
+        failureFlash: true
 
     }
     ));
@@ -14,7 +15,8 @@ module.exports = function (app, passport) {
 
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/index',
-        failureRedirect: '/signin'
+        failureRedirect: '/signin',
+        failureFlash: true
         // failureFlash: true
     }
     ));

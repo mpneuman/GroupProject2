@@ -1,6 +1,8 @@
 //dependencies
 var express = require('express');
 var app = express();
+var flash = require("connect-flash");
+
 var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -27,6 +29,8 @@ app.use(bodyParser.json());
 
 
 //for passport
+app.use(flash());
+
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); //session secret
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions

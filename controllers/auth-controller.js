@@ -14,7 +14,8 @@ exports.index = function (req, res) {
 }
 
 exports.signup = function (req, res) {
-    res.render('signup');
+    var message = req.flash('error')[0];
+    res.render('signup', {message:message});
 }
 
 exports.signin = function (req, res) {

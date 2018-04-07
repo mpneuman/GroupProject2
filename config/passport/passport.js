@@ -36,6 +36,7 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (user) {
+                    console.log("user in use\n\n\n\n")
                     return done(null, false, {
                         message: 'this email is already in use'
                     });
