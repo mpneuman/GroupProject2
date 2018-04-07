@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
 </head>
 
 <body>
-    <form id="signin" name="signin" method="post" action="/signin">
+    <div class="loginbox">
+     <img src="../images/bill.png" class="bill">   
+     <h1>Log In Here</h1>
+    <form id="signin" name="signin" method="post"  action="/signin">
         <label for="email">Email Address</label>
         <br>
         <input class="text" name="email" type="text" />
@@ -24,6 +28,7 @@
         </form>
         <span>New User?</span>
         <br>
+        </div>
     <div id="signUp">
         <a href='/signup'>
             <button>Sign Up</button>
