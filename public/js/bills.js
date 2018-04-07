@@ -1,6 +1,6 @@
 var moment = require('moment');
 require('moment-recur');
-
+var newAmount
 getBills();
 $(document).on("click", "button.changeAmt", update);
 function update(){
@@ -20,15 +20,27 @@ function update(){
     submitButton.addClass('updateSubmit');
     submitButton.text('Change Amount');
     currentBill.append(submitButton);
-    // var newAmount = $("#newBillAmt").val()
+
 
 }
-// $(document).on('click', 'button.updateSubmit', function(e){
-//     e.preventDefault();
+$(document).on('click', 'button.updateSubmit', function(e){
+    e.preventDefault();
+    newAmount = $("#newBillAmt").val()
+    updateAjax(newAmount);
 
+    console.log(newAmount);
+})
 
-//     console.log(newAmount);
-// })
+function updateAjax(stuff){
+    $.ajax({
+        method: "PUT",
+        url:"/updateBills",
+        amountDue: stuff
+    }).then(function(result) {
+        res.json(result);
+    })
+}
+
 
 
 

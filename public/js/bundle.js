@@ -5264,11 +5264,21 @@ function update(){
 $(document).on('click', 'button.updateSubmit', function(e){
     e.preventDefault();
     newAmount = $("#newBillAmt").val()
-    updateAjax(data);
+    updateAjax(newAmount);
 
     console.log(newAmount);
 })
 
+function updateAjax(newAmount){
+    $.ajax({
+        method: "PUT",
+        url:"/updateBills",
+        data: { "amountDue" : newAmount }
+    }).then(function(result) {
+        console.log('changed');
+        location.reload();
+    })
+}
 
 
 
