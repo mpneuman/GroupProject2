@@ -38,11 +38,14 @@ exports.burnBills = function (req, res) {
     });
 }
 exports.updateBills = function (req, res) {
+    console.log("here " +req.body.amount)
+
     db.Bills.update(
         req.body,
+    //    {amountDue: req.body},
         {
             where: {
-                id: req.body.id
+                id: req.user.id
             }
         }).then(function (results) {
             console.log(results);
