@@ -2,8 +2,8 @@ var billController = require('../controllers/bill-controller.js');
 module.exports = function (app, passport) {
     app.post('/newBill', isLoggedIn, billController.newBill)
     app.get('/getBills', isLoggedIn, billController.getBills)
-
-
+    app.delete('/deleteBills', isLoggedIn, billController.burnBills)
+    app.put('/updateBills', isLoggedIn, billController.updateBills)
 
 
 
