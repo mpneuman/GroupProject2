@@ -1,26 +1,29 @@
 <body>
     <div class="loginbox">
-     <img src="../images/bill.png" class="bill">   
-     <h1>Log In Here</h1>
-    <form id="signin" name="signin" method="post" action="/signin">
-        <label for="email">Email Address</label>
-        <br>
-        <input class="text" name="email" type="text" />
-        <br>
-        <label for="password">Password</label>
-        <br>
-        <input name="password" type="password" />
-        <br>
-        <input class="btn" type="submit" value="Sign In" />
-        <br>
-        <br>
+        <img src="../images/bill.png" class="bill">
+        <h1>Log In Here</h1>
+        <form id="signin" name="signin" method="post" action="/signin">
+            <label for="email">Email Address</label>
+            <br>
+            <input class="text" name="email" type="text" />
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input name="password" type="password" />
+            <br>
+            <input class="btn" type="submit" value="Sign In" />
+            <br>
+            <br>
         </form>
         <span>New User?</span>
         <br>
-        </div>
+    </div>
     <div id="signUp">
         <a href='/signup'>
-            <button>Sign Up</button>
+            <button class="pure-button">
+                <i class="fas fa-user-plus"></i>
+                Sign Up
+            </button>
         </a>
     </div>
-    </body>
+</body>
