@@ -8,7 +8,7 @@ exports.newExp = function (req, res) {
         category: req.body.category,
         notes: req.body.notes,
         UserId: req.body.UserId
-    }).then(function (result) {
+        }).then(function (result) {
         res.redirect('/index');
     })
 }
