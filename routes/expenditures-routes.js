@@ -2,7 +2,7 @@ var expController = require('../controllers/expenditures-controller.js');
 
 module.exports = function (app, passport) {
     app.post('/newExp', isLoggedIn, expController.newExp)
-    app.get('/getExp', isLoggedin, expController.getExp)
+    app.get('/getExp', isLoggedIn, expController.getExp)
 
 
 

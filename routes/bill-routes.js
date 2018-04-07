@@ -3,7 +3,7 @@ module.exports = function (app, passport) {
     app.post('/newBill', isLoggedIn, billController.newBill)
     app.get('/getBills', isLoggedIn, billController.getBills)
     app.delete('/deleteBills', isLoggedIn, billController.burnBills)
-    app.update('/updateBills', isLoggedIn, billController.updateBills)
+    app.put('/updateBills', isLoggedIn, billController.updateBills)
 
 
 

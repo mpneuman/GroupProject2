@@ -4,7 +4,7 @@ var exports = module.exports = {};
 exports.newExp = function (req, res) {
     db.Expenditures.create({
         payee: req.body.payee,
-        amountPaid: req.body.amountPaid,
+        amount_paid: req.body.amount_paid,
         category: req.body.category,
         notes: req.body.notes,
         UserId: req.body.UserId
