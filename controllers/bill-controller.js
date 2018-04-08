@@ -20,7 +20,7 @@ exports.getBills = function (req, res) {
     console.log("HERE " + req.user.id);
     db.Bills.findAll({
         where: {
-            UserId: req.user.id
+            UserId: req.user.id,
         }
     }).then(function (result) {
         console.log(result);
@@ -30,25 +30,27 @@ exports.getBills = function (req, res) {
 exports.burnBills = function (req, res) {
     db.Bills.destroy({
         where: {
+            UserId: req.user.id,
             id: req.body.id
         }
     }).then(function (result) {
         console.log(result);
-        res.json(results);
+        res.json(result);
     });
 }
 exports.updateBills = function (req, res) {
-    console.log("here " +req.body.amount)
+    console.log("here " +req.body)
 
     db.Bills.update(
         req.body,
     //    {amountDue: req.body},
         {
             where: {
-                id: req.user.id
+                UserId: req.user.id,
+                id: req.body.id
+
             }
         }).then(function (results) {
-            console.log(results);
             res.json(results);
         });
 }
