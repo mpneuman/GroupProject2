@@ -6,7 +6,6 @@ $(document).on("click", "button.changeAmt", update);
 function update(){
     var currentBill = $(this)
     .parent()
-    console.log(currentBill)
     $(currentBill).text("");
     currentBill.append('<label>');
     currentBill.attr("for", "updateBills");
@@ -19,27 +18,66 @@ function update(){
     var submitButton = $('<button>');
     submitButton.addClass('updateSubmit');
     submitButton.text('Change Amount');
+    // submitButton.onClick = updateAjax(newAmount)
     currentBill.append(submitButton);
 
 
 }
-$(document).on('click', 'button.updateSubmit', function(e){
-    e.preventDefault();
+$(document).on('click', 'button.updateSubmit', ajaxPut);
+$(document).on('click', 'button.deleteButton', ajaxDel);
+
+function ajaxDel(){
+    // e.preventDefault();
+    var id = $(this)
+    .parent()
+    .parent().attr('data-id')
+    // var id = $(currentBill).getAttribute('data-id');
+    console.log(id);
+    // newAmount = $("#newBillAmt").val()
+    delAjax(id);
+}
+function ajaxPut(){
+    // e.preventDefault();
+    var id = $(this)
+    .parent()
+    .parent().attr('data-id')
+    // var id = $(currentBill).getAttribute('data-id');
+    console.log(id);
     newAmount = $("#newBillAmt").val()
-    updateAjax(newAmount);
+    updateAjax(newAmount,id);
+}
 
-    console.log(newAmount);
-})
 
-function updateAjax(stuff){
+
+function updateAjax(newAmount, id){
     $.ajax({
         method: "PUT",
         url:"/updateBills",
-        amountDue: stuff
+        data: { "amountDue" : newAmount,
+    "id": id}
+        // ,
+        //         "id":  updateButton.id}
     }).then(function(result) {
-        res.json(result);
+        console.log('changed');
+        location.reload();
     })
 }
+
+function delAjax(id){
+    $.ajax({
+        method: "DELETE",
+        url:"/deleteBills",
+        data: { 
+    "id": id}
+        // ,
+        //         "id":  updateButton.id}
+    }).then(function(deleted) {
+        console.log('deleted');
+        console.log(deleted)
+        // location.reload();
+    })
+}
+
 
 
 
@@ -75,6 +113,7 @@ function getBillList(data) {
 
 
     for (var i = 0; i < data.length; i++) {
+
         //get the date of this months bill to do maths
         var recurrence;
         var nextDates;
@@ -94,10 +133,11 @@ function getBillList(data) {
         recurrence = moment(thisMonthBill).recur().every(1).months();//set the recur to every one month
         nextDates = recurrence.next(1, "L")// show next recur
         var whenDue;
-        console.log("This" + moment(thisMonthBill));
-        console.log("today" + moment(today));
+        console.log("This"+moment(thisMonthBill));
+        console.log("today"+moment(today));
+        console.log(moment(thisMonthBill).diff(moment(today)));
         // console.log("math"+thisMonthBill-today)
-        if (moment(thisMonthBill).diff(moment(today), 'days') < 0) {//if one is not negative store in variable
+        if (moment(thisMonthBill, "MM-DD-YY").diff(moment(today, "MM-DD-YY"), 'days') < 0) {//if one is not negative store in variable
             whenDue = moment(nextDates[i]).diff(today, 'days');//show how many days till
             // whenDue = parseInt(whenDue) + 1;
             console.log("next month date")
@@ -113,7 +153,7 @@ function getBillList(data) {
 
 
         $('#dynamicBills').append(
-            `<div class ="bills" data-id=${data[i].id}>
+            `<div class ="bills" data-id='${data[i].id}'>
     <p class='billName'>Bill Name: ${data[i].payee} </p>
     <p class='billAmount' id='amount'>Amount Due: ${data[i].amountDue}</p>
     <p class='empty1'></p>
@@ -131,7 +171,8 @@ function getBillList(data) {
     }
     var updateButton = $("<button>");
     updateButton.text("Update Bills");
-    updateButton.addClass('changeAmt')
+    updateButton.addClass(`changeAmt`)
+    // updateButton.setAttribute=("id",`${data[i].id}`)
     $(".empty1").append(updateButton);
     var deleteButton = $("<button>");
     deleteButton.text("Delete this bill");
