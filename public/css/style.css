@@ -1,5 +1,5 @@
 body{
-    background: url(../images/backgroundBlue.jpg);
+    background-image: url("../images/backgroundBlue.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7,7 +7,7 @@ body{
 } 
 
 #back{
-    background: url(../images/billpay_blue.jpg);
+    background-image: url("../images/billpay_blue.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

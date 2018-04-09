@@ -7,7 +7,7 @@ exports.newExp = function (req, res) {
         amount_paid: req.body.amount_paid,
         category: req.body.category,
         notes: req.body.notes,
-        UserId: req.body.UserId
+        UserId: req.user.id
         }).then(function (result) {
         res.redirect('/index');
     })
