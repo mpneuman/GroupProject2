@@ -1,9 +1,9 @@
 var newAmount
 getBills();
 $(document).on("click", "button.changeAmt", update);
-function update(){
+function update() {
     var currentBill = $(this)
-    .parent()
+        .parent()
     $(currentBill).text("");
     currentBill.append('<label>');
     currentBill.attr("for", "updateBills");
@@ -21,43 +21,46 @@ function update(){
 $(document).on('click', 'button.updateSubmit', ajaxPut);
 $(document).on('click', 'button.deleteButton', ajaxDel);
 
-function ajaxDel(){
+function ajaxDel() {
     var id = $(this)
-    .parent()
-    .parent().attr('data-id')
+        .parent()
+        .parent().attr('data-id')
     console.log(id);
     delAjax(id);
 }
 
-function ajaxPut(){
+function ajaxPut() {
     var id = $(this)
-    .parent()
-    .parent().attr('data-id')
+        .parent()
+        .parent().attr('data-id')
     newAmount = $("#newBillAmt").val()
-    updateAjax(newAmount,id);
+    updateAjax(newAmount, id);
 }
 
 
 
-function updateAjax(newAmount, id){
+function updateAjax(newAmount, id) {
     $.ajax({
         method: "PUT",
-        url:"/updateBills",
-        data: { "amountDue" : newAmount,
-    "id": id}
-    }).then(function(result) {
+        url: "/updateBills",
+        data: {
+            "amountDue": newAmount,
+            "id": id
+        }
+    }).then(function (result) {
         // console.log('changed');
         location.reload();
     })
 }
 
-function delAjax(id){
+function delAjax(id) {
     $.ajax({
         method: "DELETE",
-        url:"/deleteBills",
-        data: { 
-    "id": id}
-    }).then(function(deleted) {
+        url: "/deleteBills",
+        data: {
+            "id": id
+        }
+    }).then(function (deleted) {
         // console.log('deleted');
         // console.log(deleted)
         location.reload();
@@ -68,7 +71,7 @@ function getBills() {
 };
 
 function getBillList(data) {
-    
+
     for (var i = 0; i < data.length; i++) {
         var today = new Date();
         var dd = today.getDate();
@@ -104,7 +107,7 @@ function getBillList(data) {
 
         if (moment(thisMonthBill, "MM-DD-YY").diff(moment(today, "MM-DD-YY"), 'days') < 0) {//if one is not negative store in variable
             whenDue = moment(nextDates[0]).diff(moment(today), 'days');//show how many days till
-            whenDue ++
+            whenDue++
         } else {
             whenDue = moment(thisMonthBill).diff(moment(today), 'days');
         }
@@ -138,57 +141,55 @@ function getBillList(data) {
 
 
 
- 
 
-var houseVar = 0;
-var otherultVar = 0;
-var carVar = 0;
-var healthVar = 0;
-var creditVar = 0;
-var entVar = 0;
-var otherVar = 0;
- for(var i = 0; i < data.length; i++)
- {
-  
-     switch(data[i].category)
-     {
-         case "Housing":
-         houseVar += parseInt(data[i].amountDue)
-         break;
-         case "OtherUlt":
-         otherultVar += parseInt(data[i].amountDue)
-         break;
-         case "Car":
-         carVar += parseInt(data[i].amountDue)
-         break;
-         case "HealthIns":
-         healthVar += parseInt(data[i].amountDue)
-         break;
-         case "Credit":
-         creditVar += parseInt(data[i].amountDue)
-         break;
-         case "Entertainment":
-         entVar += parseInt(data[i].amountDue)
-         break;
-         case "Other":
-         otherVar += parseInt(data[i].amountDue)
-         break;
-     }
- }
- var catData = [houseVar, otherultVar, carVar, healthVar, creditVar, entVar, otherVar];
-    
+
+    var houseVar = 0;
+    var otherultVar = 0;
+    var carVar = 0;
+    var healthVar = 0;
+    var creditVar = 0;
+    var entVar = 0;
+    var otherVar = 0;
+    for (var i = 0; i < data.length; i++) {
+
+        switch (data[i].category) {
+            case "Housing":
+                houseVar += parseInt(data[i].amountDue)
+                break;
+            case "OtherUlt":
+                otherultVar += parseInt(data[i].amountDue)
+                break;
+            case "Car":
+                carVar += parseInt(data[i].amountDue)
+                break;
+            case "HealthIns":
+                healthVar += parseInt(data[i].amountDue)
+                break;
+            case "Credit":
+                creditVar += parseInt(data[i].amountDue)
+                break;
+            case "Entertainment":
+                entVar += parseInt(data[i].amountDue)
+                break;
+            case "Other":
+                otherVar += parseInt(data[i].amountDue)
+                break;
+        }
+    }
+    var catData = [houseVar, otherultVar, carVar, healthVar, creditVar, entVar, otherVar];
+
     var ctx = document.getElementById("myChart").getContext('2d');
     cData = {
         datasets: [{
             data: catData,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 255, 255, 0.2)'
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 255, 255, 0.7)'
             ],
             borderColor: [
                 'rgba(255,99,132,1)',
@@ -200,23 +201,30 @@ var otherVar = 0;
                 'rgba(255, 255, 255, 1)'
             ],
         }],
-    
+
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
-            "Housing", 
-            "OtherUlt", 
-            "Car", 
-            "HealthIns", 
-            "Credit", 
+            "Housing",
+            "OtherUlt",
+            "Car",
+            "HealthIns",
+            "Credit",
             "Entertainment",
             "Other"
         ]
+
     };
     var myDoughnutChart = new Chart(ctx, {
         type: 'doughnut',
         data: cData,
         options: {
+            legend: {
+                labels: {
+                    fontColor: "white"
+                }
+            },
             responsive: false
-        }    });
+        }
+    });
 
 }
