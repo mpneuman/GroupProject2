@@ -215,7 +215,7 @@ function getBillList(data) {
 
     };
     var myDoughnutChart = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: cData,
         options: {
             legend: {
