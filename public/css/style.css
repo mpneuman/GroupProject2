@@ -241,4 +241,15 @@ h1{
     color: #000;
  }
 
- 
+button
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+
