@@ -46,7 +46,7 @@ function updateAjax(newAmount, id){
         data: { "amountDue" : newAmount,
     "id": id}
     }).then(function(result) {
-        console.log('changed');
+        // console.log('changed');
         location.reload();
     })
 }
@@ -58,8 +58,8 @@ function delAjax(id){
         data: { 
     "id": id}
     }).then(function(deleted) {
-        console.log('deleted');
-        console.log(deleted)
+        // console.log('deleted');
+        // console.log(deleted)
         location.reload();
     })
 }
@@ -117,6 +117,7 @@ function getBillList(data) {
     <p class='billAmount' id='amount'>Amount Due: ${data[i].amountDue}</p>
     <p class='empty1'></p>
     <p class='billDate'> Days till due: ${whenDue}</p> 
+    <p class='billCategory'> Category: ${data[i].category}</p>
     <p class='billWebsite'> Website for Bill: ${data[i].websiteAccess}</p>
     <p class='billNotes'> Notes for Bill: ${data[i].notes}</p>  
     <p class='empty2'></p>  
@@ -137,18 +138,78 @@ function getBillList(data) {
 
 
 
+ 
+
+var houseVar = 0;
+var otherultVar = 0;
+var carVar = 0;
+var healthVar = 0;
+var creditVar = 0;
+var entVar = 0;
+var otherVar = 0;
+ for(var i = 0; i < data.length; i++)
+ {
+  
+     switch(data[i].category)
+     {
+         case "Housing":
+         houseVar += parseInt(data[i].amountDue)
+         break;
+         case "OtherUlt":
+         otherultVar += parseInt(data[i].amountDue)
+         break;
+         case "Car":
+         carVar += parseInt(data[i].amountDue)
+         break;
+         case "HealthIns":
+         healthVar += parseInt(data[i].amountDue)
+         break;
+         case "Credit":
+         creditVar += parseInt(data[i].amountDue)
+         break;
+         case "Entertainment":
+         entVar += parseInt(data[i].amountDue)
+         break;
+         case "Other":
+         otherVar += parseInt(data[i].amountDue)
+         break;
+     }
+ }
+ var catData = [houseVar, otherultVar, carVar, healthVar, creditVar, entVar, otherVar];
     
     var ctx = document.getElementById("myChart").getContext('2d');
     cData = {
         datasets: [{
-            data: [10, 20, 30]
+            data: catData,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 255, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 255, 255, 1)'
+            ],
         }],
     
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
-            'Red',
-            'Yellow',
-            'Blue'
+            "Housing", 
+            "OtherUlt", 
+            "Car", 
+            "HealthIns", 
+            "Credit", 
+            "Entertainment",
+            "Other"
         ]
     };
     var myDoughnutChart = new Chart(ctx, {
