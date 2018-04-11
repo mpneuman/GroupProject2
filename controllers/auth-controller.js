@@ -43,5 +43,5 @@ exports.logout = function (req, res) {
 //     })
 // }
 exports.devs = function (req, res) {
-    res.render("/about");
+    res.render("about");
 }
