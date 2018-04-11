@@ -1,262 +1,267 @@
-body{
-    background-image: url("../images/backgroundBlue.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} 
-
-#back{
-    background-image: url("../images/billpay_blue.jpg");
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: fixed;
+body {
+  background-image: url("../images/backgroundBlue.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.loginbox{
-    width:420px;
-    height:520px;
-    background: grey;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
+#back {
+  background-image: url("../images/billpay_blue.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
 }
 
-.bill{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
+.loginbox {
+  width: 420px;
+  height: 520px;
+  background: grey;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  opacity: 0.65;
 }
 
-h1{
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
+.bill {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
 }
 
-.loginbox input{
-    width: 100%;
-    margin-bottom: 20px;
+h1 {
+  margin: 0;
+  padding: 5px 0 20px;
+  text-align: center;
+  font-size: 26px;
+  color:white;
+  font-weight: bolder;
+}
+h2 {
+    font-size: 20px;
+    text-decoration: underline;
+    color: white;
+  }
 
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"]
-{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color:black;
-    font-size: 16px;
+.loginbox input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
 }
- .loginbox input[type="submit"]
- {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
- }
+.loginbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
 
- .loginbox input[type="submit"]:hover
- {
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
- }
+.loginbox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #4caf50;
+  color: #000;
+}
 
- #addBill {
-    border: none;
-    background: transparent;
-    color: black;
-    font-weight: bold;
-    padding: 5%;
-
+#addBill {
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  padding: 5%;
 }
 #addBill h3 {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30px;
-    color: black;
-    text-align: left;
-    text-decoration: underline;
-    font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  color: white;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-
-
-#addBill input[type=text] {
-    background-color: #3CBC8D;
-    color: red;
+#addBill input[type="text"] {
+  background-color: #3cbc8d;
+  color: red;
 }
 
-.category{
-    background-color: #3CBC8D;
-    color: white;
+.category {
+  background-color: #3cbc8d;
+  color: white;
 }
 
 #addExps {
-    border: none;
-    background: transparent;
-    color: white;
-    font-weight: bold;
-    padding: 5%;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  padding: 5%;
 }
 
 #addExps h3 {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30px;
-    color: black;
-    text-align: left;
-    text-decoration: underline;
-    font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  color: black;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-#addExps input[type=text] {
-    background-color: #3CBC8D;
-    color: white;
+#addExps input[type="text"] {
+  background-color: #3cbc8d;
+  color: white;
 }
-#billsGraph{
-    color: white;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
+#billsGraph {
+  color: white;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 25px;
 }
 #expsGraph {
-    color: white;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
+  color: white;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 25px;
 }
 
 #totalGraph {
-    color: white;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
+  color: white;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 25px;
 }
 
 .success {
-    background: rgb(28, 184, 65); /* green */
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
- }
+  background: rgb(28, 184, 65); /* green */
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
 
- #masthead{
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     font-weight: bold;
-     font-size: 30px;
-     color: black;
- }
- 
+#masthead {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
 
- .pure-button {
-    border: 2px solid black;
-    background-color: red;
-    color: black;
-    padding: 14px 20px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius:12px;
+.pure-button {
+  border: 2px solid black;
+  background-color: red;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 12px;
+  
+
 }
 
 .pure-button:hover {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
 
-.signUp{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -75px;
-    left: calc(50% - 50px);
-    background: black;
+.signUp {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -75px;
+  left: calc(50% - 50px);
+  background: black;
 }
 
-.signupBox{
-    width:420px;
-    height:520px;
-    background: grey;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
+.signupBox {
+  width: 420px;
+  height: 520px;
+  background: grey;
+  color: white;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  opacity: 0.65;
 }
 
-.signupBox input{
-    width: 100%;
-    margin-bottom: 20px;
-
+.signupBox input {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.signupBox input[type="text"], input[type="password"]
-{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color:black;
-    font-size: 16px;
+.signupBox input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
 }
 
-.signupBox input[type="text"], input[type="email"]
-{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color:black;
-    font-size: 16px;
+.signupBox input[type="text"],
+input[type="email"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
 }
 
- .signupBox input[type="submit"]
- {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
- }
-
- .signupBox input[type="submit"]:hover
- {
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
- }
-
-button
-{
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
+.signupBox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
 }
 
-button:hover
-{
-    background-color: #4CAF50;
-    color: white;
+.signupBox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #4caf50;
+  color: #000;
 }
+
+button {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+#dynamicBills {
+  color: white;
+}
+
+
