@@ -4,7 +4,10 @@
         <h1>Log In Here</h1>
         <form id="signin" name="signin" method="post" action="/signin">
             <label for="email">Username</label>
-            <br>
+            <br> 
+            {{#if message}}
+            <h1>{{message}}</h1>
+            {{/if}}
             <input class="text" name="email" type="text" />
             <br>
             <label for="password">Password</label>
@@ -17,14 +20,14 @@
         </form>
         <span>New User?</span>
         <div id="signUp">
-        <a href='/signup'>
-            <button class="pure-button">
-                <i class="fas fa-user-plus"></i>
-                Sign Up
-            </button>
-        <br>
-    </div>
-    
+            <a href='/signup'>
+                <button class="pure-button">
+                    <i class="fas fa-user-plus"></i>
+                    Sign Up
+                </button>
+                <br>
+        </div>
+
         </a>
     </div>
 </body>
