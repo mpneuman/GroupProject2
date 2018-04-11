@@ -1,23 +1,23 @@
 <div class="signupBox">
 <form id="signup" name="signup" method="post" action="/signup">
-    <label for="email">Email Address</label>
+    <label for="email">Username</label>
     <br>
-    <input class="text" name="email" type="email" /> 
+    <input class="text" name="email" type="text" placeholder="Billman123" /> 
     {{#if message}}
     <h1>{{message}}</h1>
     {{/if}}
     <br>
     <label for="firstname">Firstname</label>
     <br>
-    <input name="firstname" type="text" />
+    <input name="firstname" type="text" placeholder="Bill" />
     <br>
     <label for="lastname">Lastname</label>
     <br>
-    <input name="lastname" type="text" />
+    <input name="lastname" type="text" placeholder="Man" />
     <br>
     <label for="password">Password</label>
     <br>
-    <input name="password" type="password" />
+    <input name="password" type="password" placeholder="*****" />
     <br>
     <input class="btn" type="submit" value="Sign Up" />
 </form>

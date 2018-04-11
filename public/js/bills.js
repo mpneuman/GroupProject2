@@ -48,7 +48,6 @@ function updateAjax(newAmount, id) {
             "id": id
         }
     }).then(function (result) {
-        // console.log('changed');
         location.reload();
     })
 }
@@ -61,8 +60,6 @@ function delAjax(id) {
             "id": id
         }
     }).then(function (deleted) {
-        // console.log('deleted');
-        // console.log(deleted)
         location.reload();
     })
 }
