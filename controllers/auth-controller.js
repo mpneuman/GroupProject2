@@ -29,4 +29,24 @@ exports.logout = function (req, res) {
     });
 }
 
+<<<<<<< HEAD
 
+=======
+// exports.newBill = function (req, res) {
+//     db.Bills.create({
+//         payee: req.body.payee,
+//         amountDue: req.body.amountDue,
+//         category: req.body.category,
+//         dueDate: req.body.dueDate,
+//         websiteAccess: req.body.websiteAccess,
+//         notes: req.body.notes,
+//         UserId: req.body.UserId
+
+//     }).then(function (result) {
+//         res.redirect('/index');
+//     })
+// }
+exports.devs = function (req, res) {
+    res.render("about");
+}
+>>>>>>> 414b4671969a661dcbc096f2e6e885631088bd22
