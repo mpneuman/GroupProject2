@@ -204,9 +204,9 @@ function getBillList(data) {
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
             "Housing",
-            "OtherUlt",
+            "Other Utilities",
             "Car",
-            "HealthIns",
+            "Health Ins",
             "Credit",
             "Entertainment",
             "Other"
