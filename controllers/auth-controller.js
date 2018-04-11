@@ -42,3 +42,6 @@ exports.logout = function (req, res) {
 //         res.redirect('/index');
 //     })
 // }
+exports.devs = function (req, res) {
+    res.render("about");
+}
