@@ -19,7 +19,8 @@ exports.signup = function (req, res) {
 }
 
 exports.signin = function (req, res) {
-    res.render('signin');
+    var message = req.flash('error')[0];
+    res.render('signin', {message:message});
 }
 
 exports.logout = function (req, res) {
@@ -28,6 +29,9 @@ exports.logout = function (req, res) {
     });
 }
 
+<<<<<<< HEAD
+
+=======
 // exports.newBill = function (req, res) {
 //     db.Bills.create({
 //         payee: req.body.payee,
@@ -45,3 +49,4 @@ exports.logout = function (req, res) {
 exports.devs = function (req, res) {
     res.render("about");
 }
+>>>>>>> 414b4671969a661dcbc096f2e6e885631088bd22
