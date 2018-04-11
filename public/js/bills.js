@@ -48,7 +48,6 @@ function updateAjax(newAmount, id) {
             "id": id
         }
     }).then(function (result) {
-        // console.log('changed');
         location.reload();
     })
 }
@@ -61,8 +60,6 @@ function delAjax(id) {
             "id": id
         }
     }).then(function (deleted) {
-        // console.log('deleted');
-        // console.log(deleted)
         location.reload();
     })
 }
@@ -121,7 +118,7 @@ function getBillList(data) {
     <p class='empty1'></p>
     <p class='billDate'> Days till due: ${whenDue}</p> 
     <p class='billCategory'> Category: ${data[i].category}</p>
-    <p class='billWebsite'> Website for Bill: ${data[i].websiteAccess}</p>
+    <p class='billWebsite'> Website for Bill: <a href="//${data[i].websiteAccess}" target="_blank"> ${data[i].websiteAccess}</a></p>
     <p class='billNotes'> Notes for Bill: ${data[i].notes}</p>  
     <p class='empty2'></p>  
     </br>
@@ -132,7 +129,6 @@ function getBillList(data) {
     var updateButton = $("<button>");
     updateButton.text("Update Bills");
     updateButton.addClass(`changeAmt`)
-    // updateButton.setAttribute=("id",`${data[i].id}`)
     $(".empty1").append(updateButton);
     var deleteButton = $("<button>");
     deleteButton.text("Delete this bill");
