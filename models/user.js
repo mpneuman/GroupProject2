@@ -14,11 +14,7 @@ module.exports = function (sequelize, Sequelize) {
         },
         email: {
             type: Sequelize.STRING,
-<<<<<<< HEAD
-
-=======
             
->>>>>>> 8344c9108d2b17a40a2b0d1f47ff8907dcd565dc
         },
         password: {
             type: Sequelize.STRING,
