@@ -30,7 +30,12 @@ exports.logout = function (req, res) {
 }
 
 <<<<<<< HEAD
-
+exports.devs = function (req, res) {
+    res.render("about");
+}
+exports.main = function (req, res) {
+    res.redirect("index");
+}
 =======
 // exports.newBill = function (req, res) {
 //     db.Bills.create({
@@ -49,4 +54,4 @@ exports.logout = function (req, res) {
 exports.devs = function (req, res) {
     res.render("about");
 }
->>>>>>> 414b4671969a661dcbc096f2e6e885631088bd22
+>>>>>>> 81cca2420914d07ce243740dfc2ba30a123a6f25
