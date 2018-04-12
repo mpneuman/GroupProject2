@@ -229,7 +229,6 @@ input[type="email"] {
   color: black;
   font-size: 16px;
 }
-<<<<<<< HEAD
 
 .signupBox input[type="submit"] {
   border: none;
@@ -269,11 +268,8 @@ button:hover {
   color: white;
 }
 
-
-=======
 h3
 {
-<<<<<<< HEAD
     width: 200px;
     height: 200px;
     
@@ -284,7 +280,7 @@ h3
     border-width: 5px;
     border-color: #fff;
     /* width: 200px; */
-=======
+
     font-size: 18px;
     color: #fff;
 
@@ -300,6 +296,4 @@ img
 { 
     font-size: 31px;
     color: #fff;
->>>>>>> 81cca2420914d07ce243740dfc2ba30a123a6f25
 }
->>>>>>> 1c19d328edc292510b0abc3e7231a1bcd52beb16
