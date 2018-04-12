@@ -299,21 +299,7 @@ h3
     border-style: solid;
     border-width: 2px;
     border-color: #fff;
-<<<<<<< HEAD
     /* width: 200px; */
-}
-
-#new{
-    margin:auto;
-    width:90%;
-    margin-top: 5%;
-}
-
-#graph{
-    position: relative;
-    float: left;
-}
-=======
     background: grey;
     padding:15px;
     white-space: nowrap; 
@@ -327,5 +313,17 @@ h3
 }
 
 
+#new{
+    margin:auto;
+    width:90%;
+    margin-top: 5%;
+}
 
->>>>>>> 8344c9108d2b17a40a2b0d1f47ff8907dcd565dc
+#graph{
+    position: relative;
+    float: left;
+}
+
+
+
+
