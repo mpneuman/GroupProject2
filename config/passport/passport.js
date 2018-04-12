@@ -38,7 +38,7 @@ module.exports = function (passport, user) {
                 if (user) {
                     console.log("user in use\n\n\n\n")
                     return done(null, false, {
-                        message: 'this email is already in use'
+                        message: 'this username is already in use'
                     });
                 } else {
                     var userPassword = generateHash(password);
@@ -80,7 +80,7 @@ module.exports = function (passport, user) {
             }).then(function (user) {
                 if (!user) {
                     return done(null, false, {
-                        message: 'Email does not exist'
+                        message: 'Username does not exist'
                     });
                 }
                 if (!isValidPassword(user.password, password)) {
