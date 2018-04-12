@@ -29,29 +29,9 @@ exports.logout = function (req, res) {
     });
 }
 
-<<<<<<< HEAD
 exports.devs = function (req, res) {
     res.render("about");
 }
 exports.main = function (req, res) {
     res.redirect("index");
 }
-=======
-// exports.newBill = function (req, res) {
-//     db.Bills.create({
-//         payee: req.body.payee,
-//         amountDue: req.body.amountDue,
-//         category: req.body.category,
-//         dueDate: req.body.dueDate,
-//         websiteAccess: req.body.websiteAccess,
-//         notes: req.body.notes,
-//         UserId: req.body.UserId
-
-//     }).then(function (result) {
-//         res.redirect('/index');
-//     })
-// }
-exports.devs = function (req, res) {
-    res.render("about");
-}
->>>>>>> 81cca2420914d07ce243740dfc2ba30a123a6f25
