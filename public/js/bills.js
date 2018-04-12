@@ -33,8 +33,14 @@ function ajaxPut() {
     var id = $(this)
         .parent()
         .parent().attr('data-id')
+
     newAmount = $("#newBillAmt").val()
-    updateAjax(newAmount, id);
+    if (newAmount == "" || isNaN(newAmount)) {
+        $("#amount").append("<br> Must be filled out with a number");
+    } else {
+        updateAjax(newAmount, id);
+    }
+
 }
 
 
@@ -222,5 +228,27 @@ function getBillList(data) {
             responsive: false
         }
     });
+
+}
+
+function validateForm() {
+    var payAmount = document.forms["newBill"]["amountDue"].value;
+    var dateDue = document.forms["newBill"]["dateDue"].value;
+    var stuff = $(".text").val();
+    var reg = new RegExp(/<[^>]*>/g);
+    if (payAmount == "" || isNaN(payAmount)) {
+        $("#payLabel").append("<br>Must be filled out and must be a number")
+        return false;
+    }
+    if (dateDue == "" || isNaN(dateDue) || dateDue > 31 || dateDue <= 0) {
+        $("#dateLabel").append("<br>Must be a date and must be less than 31");
+        return false;
+    }
+
+    if (reg.test(stuff)) {
+        $("#newBill").prepend("Must not contain any special characters <br>")
+        return false;
+    }
+
 
 }

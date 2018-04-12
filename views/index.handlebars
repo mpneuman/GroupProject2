@@ -39,12 +39,13 @@
                     
                         <h4>Add a new bill</h4>
                 
-                    <form id="newBill" name="newBill" method="post" action="/newBill">
+                        
+                    <form id="newBill" name="newBill" method="post" action="/newBill"  onsubmit="return validateForm()">
                         <label for="payee">Who are you paying?</label>
                         <br>
-                        <input class="text" name="payee" type="text" />
+                        <input class="text" name="payee" type="text" pattern="[/<[^>]*>/g]+" title="Invalid input" />
                         <br>
-                        <label for="amountDue">How much are you paying?</label>
+                        <label for="amountDue" id='payLabel'>How much are you paying? (Required)</label>
                         <br>
                         <input class="text" name="amountDue" type="text" />
                         <br>
@@ -72,7 +73,7 @@
                         <br> {{!--
                         <input name="category" list="category" /> --}}
                         <br>
-                        <label for="dateDue">What day of the month is this bill due?</label>
+                        <label for="dateDue" id='dateLabel'>What day of the month is this bill due? (Required)</label>
                         {{!-- Will try to add calander --}}
                         <br>
                         <input class="text" name="dateDue" type="text" />
@@ -100,11 +101,12 @@
 
                 <section id="graphs">
                     <div id="billsGraph" class='clearfix'>
-                        <span>
+                        <div>
                             <h4>What your bills look like</h4>
-                        </span>
+                        
                         {{!-- bill graph will go here --}}
                         <canvas id="myChart" width="400" height="400"></canvas>
+                        </div>
                     </div>
 
                 </section>
