@@ -15,7 +15,7 @@ body {
 
 .loginbox {
   width: 420px;
-  height: 520px;
+  height: 450px;
   background: grey;
   color: #fff;
   top: 50%;
@@ -24,7 +24,7 @@ body {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
-  opacity: 0.65;
+  
 }
 
 .bill {
@@ -159,6 +159,7 @@ input[type="password"] {
   font-weight: bold;
   font-size: 30px;
   color: black;
+  padding: 2px 0 0;
 }
 
 .pure-button {
@@ -190,7 +191,7 @@ input[type="password"] {
 
 .signupBox {
   width: 420px;
-  height: 520px;
+  height: 460px;
   background: grey;
   color: white;
   top: 50%;
@@ -199,7 +200,7 @@ input[type="password"] {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
-  opacity: 0.65;
+
 }
 
 .signupBox input {
@@ -243,6 +244,9 @@ input[type="email"] {
   cursor: pointer;
   background: #4caf50;
   color: #000;
+}
+::placeholder{
+    color: black;
 }
 
 button {
