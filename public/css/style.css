@@ -82,6 +82,9 @@ h1{
     color: black;
     font-weight: bold;
     padding: 5%;
+    position: relative;
+    float: left;
+    /* padding-left: 35%; */
 
 }
 #addBill h3 {
@@ -272,4 +275,15 @@ img
     border-width: 5px;
     border-color: #fff;
     /* width: 200px; */
+}
+
+#new{
+    margin:auto;
+    width:90%;
+    margin-top: 5%;
+}
+
+#graph{
+    position: relative;
+    float: left;
 }
