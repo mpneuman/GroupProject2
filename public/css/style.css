@@ -82,7 +82,7 @@ h2 {
  #addBill {
     border: none;
     background: transparent;
-    color: black;
+    color: white;
     font-weight: bold;
     padding: 5%;
     position: relative;
@@ -123,7 +123,7 @@ input[type="password"] {
 #addBill {
   border: none;
   background: transparent;
-  color: white;
+  color: black;
   font-weight: bold;
   padding: 5%;
 }
@@ -285,7 +285,7 @@ button:hover {
 }
 
 #dynamicBills {
-  color: white;
+  color: black;
 }
 
 h3
