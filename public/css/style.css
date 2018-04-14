@@ -6,13 +6,7 @@ body {
   background-size: cover;
 }
 
-#back {
-  background-image: url("../images/billpay_blue.jpg");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-  
-}
+
 
 .loginbox {
   width: 420px;
@@ -123,7 +117,7 @@ input[type="password"] {
 #addBill {
   border: none;
   background: transparent;
-  color: black;
+  color: white;
   font-weight: bold;
   padding: 5%;
 }
