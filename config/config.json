@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "port": 8889,
+    "port": 3306,
     "database": "bills_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -15,10 +15,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "pt62w2fv7dhcr3it",
+    "password": "un9pvpffl57423tw",
+    "database": "kzs4epihmk9tinm2",
+    "host": "tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

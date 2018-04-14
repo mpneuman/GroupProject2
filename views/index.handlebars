@@ -1,3 +1,4 @@
+<div id="back">
 <header id="masthead">
     <div class="container">
         <div class="pure-menu pure-menu-horizontal">
@@ -15,7 +16,7 @@
         </div>
     </div>
 </header>
-<div id="back">
+
     <div id="mainSection">
         <header>
             <h1>Hello {{dataValues.firstname}} {{dataValues.lastname}}!
@@ -37,10 +38,11 @@
             <section id="addSection">
                 <div id="addBill">
                     
-                        <h4>Add a new bill</h4>
+                        
                 
                         
                     <form id="newBill" name="newBill" method="post" action="/newBill"  onsubmit="return validateForm()">
+                    <h4>Add a new bill</h4>
                         <label for="payee">Who are you paying?</label>
                         <br>
                         <input class="text" name="payee" type="text" pattern="[/<[^>]*>/g]+" title="Invalid input" />
@@ -105,7 +107,7 @@
                             <h4>What your bills look like</h4>
                         
                         {{!-- bill graph will go here --}}
-                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <canvas id="myChart" width="300" height="300"></canvas>
                         </div>
                     </div>
 
