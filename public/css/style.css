@@ -312,6 +312,11 @@ h3
  
 }
 
+@media only screen and (max-width : 4000px)  {
+  .pure-menu-item {
+      font-size: 12px;
+      background-color: red;
+  }
 
 #new{
     margin:auto;
