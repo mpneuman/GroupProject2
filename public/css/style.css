@@ -324,6 +324,14 @@ h3
     float: left;
 }
 
+.pure-menu-link{
+  background: transparent;
+
+}
+.pure-menu-link:hover {
+  background-color: gray;
+  color:white;
+}
 
 
 
