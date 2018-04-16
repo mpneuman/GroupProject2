@@ -1,25 +1,9 @@
 <div id="back">
-<header id="masthead">
-    <div class="container">
-        <div class="pure-menu pure-menu-horizontal">
-            <a href="/" class="pure-menu-heading pure-menu-link">Billify</a>
-            <div align="right">
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item">
-                        <a href="/index" class="pure-menu-link">Dashboard</a>
-                    </li>
-                    <li class="pure-menu-item">
-                        <a href="/about" class="pure-menu-link">Developers</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+
 
     <div id="mainSection">
         <header>
-            <h1>Hello {{dataValues.firstname}} {{dataValues.lastname}}!
+            <h1 class='intro'>Hello {{dataValues.firstname}} {{dataValues.lastname}}!
                 <br> Welcome to Billify</h1>
         </header>
         <section id="lists">
@@ -35,13 +19,12 @@
         </section>
         <br>
         <div id='new'>
-            <section id="addSection">
+            <div class='pure-g'>
+                <p class='pure-u-0 pure-u-md-1-8'></p>
+<div class='pure-u-1 pure-u-md-1-4'>
                 <div id="addBill">
-                    
-                        
-                
-                        
-                    <form id="newBill" name="newBill" method="post" action="/newBill"  onsubmit="return validateForm()">
+                            
+                    <form id="newBill" name="newBill" method="post" action="/newBill" autocomplete="off"  onsubmit="return validateForm()">
                     <h4>Add a new bill</h4>
                         <label for="payee">Who are you paying?</label>
                         <br>
@@ -99,12 +82,14 @@
 
                     </form>
                 </div>
+                </div>
                 <br>
-
+                <p class='pure-u-0 pure-u-md-1-8'></p>
+                <div class='pure-u-1 pure-u-md-1-3'>
                 <section id="graphs">
-                    <div id="billsGraph" class='clearfix'>
+                    {{!-- <div id="billsGraph" class='clearfix'> --}}
                         <div>
-                            <h4>What your bills look like</h4>
+                            <h4 id='graphTitle'>What your bills look like</h4>
                         
                         {{!-- bill graph will go here --}}
                         <canvas id="myChart" width="300" height="300"></canvas>
@@ -112,7 +97,8 @@
                     </div>
 
                 </section>
-            </section>
+                </div>
+            </div>
 
         </div>
     </div>

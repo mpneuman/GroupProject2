@@ -1,47 +1,40 @@
-  <header id="masthead">
-    <div class="container">
-      <div class="pure-menu pure-menu-horizontal">
-    <a href="/" class="pure-menu-heading pure-menu-link">Billify</a>
-    <div align="right">
-		  <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a href="/index" class="pure-menu-link">Dashboard</a></li>
-        <li class="pure-menu-item"><a href="/about" class="pure-menu-link">Developers</a></li>
-    </ul>
-		  </div>
-</div>
-    </div>
-  </header>
-<div class="signupBox">
-    <div id='welcolme'> <strong> Sign up to keep track of your bills</strong></div>
-<form id="signup" name="signup" method="post" action="/signup">
-    <label for="email">Username</label>
-    <br>
-    <input class="text" name="email" type="text" /> 
-    {{#if message}}
-    <h1>{{message}}</h1>
-    {{/if}}
-    <br>
-    <label for="firstname">First name</label>
-    <br>
-    <input name="firstname" type="text" />
-    <br>
-    <label for="lastname">Last name</label>
-    <br>
-    <input name="lastname" type="text" />
-    <br>
-    <label for="password">Password</label>
-    <br>
-    <input name="password" type="password" />
-    <br>
-    <input class="btn" type="submit" value="Sign Up" />
-</form>
-<br>
+<div class='pure-g'>
+        <p class='pure-u-1-5 pure-u-md-2-5'></p>
+        <div class='pure-u-4-5 pure-u-md-3-5'>
+        <div id='welcolme'>
+            <strong> Sign up to keep track of your bills</strong>
+        </div>
+        <form id="signup" name="signup" method="post" action="/signup" autocomplete="off">
+            <label for="email">Username</label>
+            <br>
+            <input class="text" name="email" type="text" /> {{#if message}}
+            <h1>{{message}}</h1>
+            {{/if}}
+            <br>
+            <label for="firstname">First name</label>
+            <br>
+            <input name="firstname" type="text" />
+            <br>
+            <label for="lastname">Last name</label>
+            <br>
+            <input name="lastname" type="text" />
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input name="password" type="password" />
+            <br>
+            <input class="pure-button" type="submit" value="Sign Up" />
+        </form>
+        <br>
 
-<div id="signIn">
-    <span> Existing User?
-</span>
-    <a href='/signin'>
-        <button>Sign In</button>
-    </a>
-</div>
+
+        <div id="signIn">
+            <span> Existing User?
+            </span>
+            <a href='/signin'>
+                <button>Sign In</button>
+            </a>
+        </div>
+        </div>
+    
 </div>

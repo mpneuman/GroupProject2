@@ -1,331 +1,90 @@
-body {
-  background-image: url("../images/backgroundBlue.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body{
+  background-image: url("../images/back.png");
 }
-
-#back {
-  /* background-image: url("../images/billpay_blue.jpg"); */
-  /* background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed; */
-  
-}
-
-.loginbox {
-  width: 450px;
-  height: 450px;
-  background: grey;
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-43%, -35%);
+#masthead{
   box-sizing: border-box;
-  padding: 70px 30px;
+  margin-top: 10px;
   
 }
 
-.bill {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  left: calc(50% - 50px);
-}
-
-h1 {
-  margin: 0;
-  padding: 5px 0 20px;
+#brand{
+  text-decoration: none;
+  font-size: 42px;
   text-align: center;
-  font-size: 26px;
-  color:white;
-  font-weight: bolder;
 }
-h2 {
-    font-size: 20px;
-    text-decoration: underline;
-    color: white;
-  }
-
-.loginbox input[type="text"], input[type="password"]
-{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color:black;
-    font-size: 16px;
+#brand:hover{
+  background-color: rgba(170, 169, 169, 0.781);
 }
- .loginbox input[type="submit"]
- {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
- }
-
- .loginbox input[type="submit"]:hover
- {
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
- }
-
- #addBill {
-    border: none;
-    background: transparent;
-    color: black;
-    font-weight: bold;
-    padding: 5%;
-    position: relative;
-    float: left;
-    /* padding-left: 35%; */
- }
-.loginbox input {
-  width: 100%;
-  margin-bottom: 20px;
+#brand:visited{
+  color:black;
 }
-
-.loginbox input[type="text"],
-input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
+#dash{
+  text-decoration: none;
+}
+#dash:visited{
+color: #000;
+}
+#about{
+  text-decoration: none;
+}
+#about:visited{
   color: black;
-  font-size: 16px;
-}
-.loginbox input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #fb2525;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
 }
 
-.loginbox input[type="submit"]:hover {
-  cursor: pointer;
-  background: #4caf50;
-  color: #000;
-}
 
-#addBill {
-  border: none;
-  background: transparent;
-  color: white;
-  font-weight: bold;
-  padding: 5%;
-}
-#addBill h3 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+.links{
   font-size: 30px;
-  color: white;
-  text-align: left;
-  text-decoration: underline;
-  font-weight: bold;
+  text-align: center;
+  padding-right: 15px;
+  margin-right: 5px;
+}
+.links:hover{
+  background-color: rgba(170, 169, 169, 0.781);
 }
 
-#addBill input[type="text"] {
-  background-color: #3cbc8d;
-  color: black;
-}
-
-.category {
-  background-color: #3cbc8d;
-  color: white;
-}
-
-
-
-#billsGraph {
-  color: white;
-  font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 25px;
-  
-}
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-#totalGraph {
-  color: white;
-  font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 25px;
-}
-
-.success {
-  background: rgb(28, 184, 65); /* green */
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-#masthead {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-weight: bold;
-  font-size: 30px;
-  color: black;
-  padding: 2px 0 0;
-}
-
-.pure-button {
-  border: 2px solid black;
-  background-color: red;
-  color: black;
-  padding: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 12px;
-  
-
-}
-
-.pure-button:hover {
-  background-color: #4caf50;
-  color: white;
-}
-
-.signUp {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -75px;
-  left: calc(50% - 50px);
-  background: black;
-}
-
-.signupBox {
-  width: 400px;
-  height: 500px;
-  background: grey;
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -35%);
-  box-sizing: border-box;
-  padding: 70px 30px;
-
-}
-
-.signupBox input {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.signupBox input[type="text"],
-input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: black;
-  font-size: 16px;
-}
-
-.signupBox input[type="text"],
-input[type="email"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: black;
-  font-size: 16px;
-}
-
-.signupBox input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #fb2525;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
-
-.signupBox input[type="submit"]:hover {
-  cursor: pointer;
-  background: #4caf50;
-  color: #000;
-}
-::placeholder{
-    color: black;
-}
-
-button {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #fb2525;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
-
-button:hover {
-  background-color: #4caf50;
-  color: white;
-}
-
-#dynamicBills {
-  color: white;
-}
-
-h3
-{
-    width: 200px;
-    height: 200px;
-    
-}
-#dynamicBills > *{
-    display: inline-block;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #fff;
-    /* width: 200px; */
-    background: grey;
-    padding:15px;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; 
-    border: 1px solid #000000;
-    max-width: auto;
+.intro{
+  text-align: center;
   word-wrap: break-word;
-  text-overflow: ellipsis;
- 
 }
 
-@media only screen and (max-width : 4000px)  {
-  .pure-menu-item {
-      font-size: 12px;
-      background-color: red;
-  }}
+#dynamicBills > *{
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px;
+  background: grey;
+  padding:15px;
+  white-space: nowrap; 
+  border: 1px solid #000000;
+  width: 240px;
+  margin-left: 20px;
+  margin-top: 20px;
 
-#new{
-    margin:auto;
-    width:90%;
-    margin-top: 5%;
+
+}
+.billName{
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 
-#graph{
-    position: relative;
-    float: left;
+.loginbox{
+  /* box-sizing: border-box; */
+  /* background: grey; */
+  /* color: #fff; */
+  /* padding: 70px 30px; */
+  
+}
+#graphTitle{
+  text-align: center;
+  margin-left: 5px;
 }
 
+
+
+@media screen and (max-width: 430px) {
+.links{
+  text-align: center;
+}
+
+
+
+}

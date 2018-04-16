@@ -119,12 +119,13 @@ function getBillList(data) {
 
         $('#dynamicBills').append(
             `<div class ="bills" data-id='${data[i].id}'>
-    <p class='billName'>Bill Name: ${data[i].payee} </p>
+            <div class='test'>
+    <p class='billName'>Bill Name: ${data[i].payee} </p></div>
     <p class='billAmount' id='amount'>Amount Due: ${data[i].amountDue}</p>
     <p class='empty1'></p>
     <p class='billDate'> Days till due: ${whenDue}</p> 
     <p class='billCategory'> Category: ${data[i].category}</p>
-    <p class='billWebsite'> Website for Bill: <a href="//${data[i].websiteAccess}" target="_blank"> ${data[i].websiteAccess}</a></p>
+    <p class='billWebsite'> <a href="//${data[i].websiteAccess}" target="_blank"><button>Website for your bill!</button></a></p>
     <p class='billNotes'> Notes for Bill: ${data[i].notes}</p>  
     <p class='empty2'></p>  
     </br>

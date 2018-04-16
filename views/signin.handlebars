@@ -1,54 +1,40 @@
 <body>
-    <div>
-    <header id="masthead">
-        <div class="container">
-            <div class="pure-menu pure-menu-horizontal">
-                <a href="/" class="pure-menu-heading pure-menu-link">Billify</a>
-                <div align="right">
-                    <ul class="pure-menu-list">
-                        <li class="pure-menu-item">
-                            <a href="/index" class="pure-menu-link">Dashboard</a>
-                        </li>
-                        <li class="pure-menu-item">
-                            <a href="/about" class="pure-menu-link">Developers</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class='pure-g'>
+        <p class='pure-u-1-5 pure-u-md-2-5'></p>
+        <div class='pure-u-4-5 pure-u-md-3-5'>
+        <div class="loginbox">
+            <img class="bill">
+            <h1>Log In Here</h1>
+            <form id="signin" name="signin" method="post" action="/signin" autocomplete="off">
+                <label for="email">Username</label>
+                <br> {{#if message}}
+                <h1>{{message}}</h1>
+                {{/if}}
+                <input class="text" name="email" type="text" />
+                <br>
+                <label for="password">Password</label>
+                <br>
+                <input name="password" type="password" />
+                <br>
+                <input class="pure-button" type="submit" value="Sign In" />
+                <br>
+                <br>
+            </form>
+            <span>New User?</span>
+            <div id="signUp">
+                <a href='/signup'>
+                    <button class="pure-button">
+                        <i class="fas fa-user-plus"></i>
+                        Sign Up
+                    </button>
+                </a>
+                <br>
             </div>
-        </div>
-    </header>
-    <div class="loginbox">
-        <img src="../images/bill.png" class="bill">
-        <h1>Log In Here</h1>
-        <form id="signin" name="signin" method="post" action="/signin">
-            <label for="email">Username</label>
-            <br> {{#if message}}
-            <h1>{{message}}</h1>
-            {{/if}}
-            <input class="text" name="email" type="text"  />
-            <br>
-            <label for="password">Password</label>
-            <br>
-            <input name="password" type="password"  />
-            <br>
-            <input class="btn" type="submit" value="Sign In" />
-            <br>
-            <br>
-        </form>
-        <span>New User?</span>
-        <div id="signUp">
-            <a href='/signup'>
-                <button class="pure-button">
-                    <i class="fas fa-user-plus"></i>
-                    Sign Up
-                </button>
-            </a>
-            <br>
-        </div>
-        
 
 
+
+        </div>
+        </div>
     </div>
-    </div>
-    
+
 </body>
