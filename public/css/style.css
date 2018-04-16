@@ -85,6 +85,14 @@ color: #000;
   text-align: center;
 }
 
+.pure-menu-link{
+  background: transparent;
+
+}
+.pure-menu-link:hover {
+  background-color: gray;
+  color:white;
+}
 
 
 }
